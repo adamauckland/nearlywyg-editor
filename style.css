@@ -73,7 +73,9 @@ body {
 textarea {
   border-radius: 0; }
 
-@media (max-width: 400px) {
-  body {
-    padding-left: 0;
-    padding-right: 0; } }
+body {
+  overflow-y: scroll; }
+  @media (max-width: 400px) {
+    body {
+      padding-left: 0;
+      padding-right: 0; } }

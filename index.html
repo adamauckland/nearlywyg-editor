@@ -11,21 +11,16 @@
 			
 		<div class="container editArea">
 			<h1>Demo NearlyWyg Editor</h1>
-			
+			<p>Nearly WYSIWYG content editor for touch/mobile/desktop.</p>
 			
 			<div class="nearlyWyg">
-				
 				<form>
-					<div id="copyArea">
+					<!-- This is the area we put the content -->
+					<div id="copyArea"></div>
 					
-					</div>
-					
-					
+					<!-- Style selector -->
 					<fieldset>
-						<!-- <span>&#9660;</span> -->
 						<ul id="styleSelector">
-							
-							
 							<li data-element="h1" data-selected="false">
 								<h1>Heading</h1>
 							</li>
@@ -45,13 +40,23 @@
 							<li data-element="p" data-default="true" data-selected="true"> 
 								Paragraph
 							</li>
+							
+							<li data-element="ul" data-selected="false"> 
+								Bullet list
+							</li>
+							
+							<li data-element="ol" data-selected="false">
+								Numbered list
+							</li>
 						</ul>
 					</fieldset>
 					
+					<!-- text area for typing the content -->
 					<fieldset>
 						<textarea id="newBlock" rows="4" class="input-block-level" placeholder="Add text block"></textarea>
 					</fieldset>
 					
+					<!-- it felt odd without an OK button -->
 					<fieldset id="buttonBlock">
 						<span class="floatRight">
 							<button type="button" id="cancelButton" class="btn">Cancel</button>
