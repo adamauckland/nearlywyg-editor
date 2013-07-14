@@ -48,6 +48,11 @@
 							<li data-element="ol" data-selected="false">
 								Numbered list
 							</li>
+							
+							<li data-element="img" data-selected="false">
+								Image
+							</li>
+							
 						</ul>
 					</fieldset>
 					
@@ -67,19 +72,39 @@
 			</div>
 		</div>
 		
+		<div class="container">
+			<h2>
+				Output HTML
+			</h2>
+			
+			<form>
+				<fieldset>
+					<textarea id="outputHtml"  class="input-block-level">
+					</textarea>		
+				</fieldset>
+			</form>
+			
+		</div>
+		
 				
 		<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
 		<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
 		
 		
 		<script type="text/javascript" src="js/jquery-ui-1.10.3.custom.min.js"></script>
-		<script type="text/javascript" src="js/test.js"></script>
+		<script type="text/javascript" src="js/NearlyWyg.js"></script>
 		<script src="js/jquery.ui.touch-punch.min.js"></script>
 		
 		
 		<script type="text/javascript">
 			$(document).ready(function() {
 				var nearlyWygEditor = new NearlyWygEditor('#styleSelector', '#newBlock', '#copyArea', '#buttonBlock');
+				
+				nearlyWygEditor.onChange(function() {
+					$('#outputHtml').val($('#copyArea').html());
+				});
+				
+				
 			});
 		</script>
 	</body>

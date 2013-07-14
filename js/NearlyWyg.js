@@ -6,7 +6,19 @@ function NearlyWygEditor(styleSelector, textArea, copyArea, buttonBlock) {
         $copyArea,
         $buttonBlock,
         $latestElement = null,
-        cancelButtonEvent = false;
+        cancelButtonEvent = false,
+        nearlyWygEditor = this;
+    
+    
+    this.onChangeFunctions = [];
+    this.onChange = function(fn) {
+        this.onChangeFunctions.push(fn);
+    };
+    this.fireOnChange = function() {
+        for(var i=0; i< this.onChangeFunctions.length; i++) {
+            this.onChangeFunctions[i]();
+        }
+    };
     
     
     function generateHtmlForContent(elementType, content) {
@@ -28,8 +40,13 @@ function NearlyWygEditor(styleSelector, textArea, copyArea, buttonBlock) {
                 }
                 break;
             
+            case 'img':
+                $rootElement.attr('src', content.replace(/ /g, ''));
+                break;
+            
             default:
                 buildHtml = $rootElement.text(content);
+                buildHtml.html(buildHtml.html().replace(/\n/g, '<br/>'));
                 break;
         }
 
@@ -53,9 +70,14 @@ function NearlyWygEditor(styleSelector, textArea, copyArea, buttonBlock) {
                 
                 content = buildItems.join('\n');
                 break;
+        
+            case 'img':
+                content = $element.attr('src');
+                break;
+            
             default:
-                content = $element.text();
-        };
+                content = $element.html().replace(/<br>/g, '\n');
+        }
         
         return content;
     }
@@ -164,12 +186,7 @@ function NearlyWygEditor(styleSelector, textArea, copyArea, buttonBlock) {
         
         this.updateCopyNewItem = function() {
             var newElementType,
-                newVal,
-                newHtml,
-                
-                $newElement,
-                $newReplaceHtml,
-                $newReplaceElement;
+                $newElement;
             
             newElementType = self.styleBlock.getElementType();
             $newElement = generateHtmlForContent(newElementType, self.element.val());
@@ -179,29 +196,20 @@ function NearlyWygEditor(styleSelector, textArea, copyArea, buttonBlock) {
             $copyArea.append($newElement);
             
             $latestElement = $newElement;
-        }
+        };
         
         
         this.updateCopyExistingItem = function() {
             var newElementType,
-                newVal,
-                newHtml,
-                $newElement,
-                $newReplaceHtml,
                 $newReplaceElement;
                 
-            newElementType = self.styleBlock.getElementType();            
-            
-            self.newElement.removeClass('editing');
-            
+            newElementType = self.styleBlock.getElementType();          
             $newReplaceElement = generateHtmlForContent(newElementType, self.element.val());
             
-            attachBlockClickHandlers($newReplaceElement, newElementType);
-            
-            self.newElement.replaceWith($newReplaceElement);
-            
+            attachBlockClickHandlers($newReplaceElement, newElementType);            
+            self.newElement.replaceWith($newReplaceElement);            
             $latestElement = $newReplaceElement;
-        }
+        };
         
         
         function blurFromElement() {
@@ -226,7 +234,7 @@ function NearlyWygEditor(styleSelector, textArea, copyArea, buttonBlock) {
                 return; 
             }
             
-            stripText = self.element.val().replace(/ /g,'');
+            stripText = self.element.val().replace(/ /g, '').replace(/\n/g, '');
             if (stripText !== '') {
                 if (self.newElement === true) {
                     self.updateCopyNewItem();
@@ -244,6 +252,8 @@ function NearlyWygEditor(styleSelector, textArea, copyArea, buttonBlock) {
             
             cancelSorting();
             resetEditing();
+            
+            nearlyWygEditor.fireOnChange();
         }
         
         

@@ -1,8 +1,4 @@
-body {
-    background: #eee;    
-}
-
-    .nearlyWyg {
+.nearlyWyg {
     #styleSelector {
         list-style: none;
         padding: 0;
@@ -106,7 +102,11 @@ body {
 }
 
 
-    
+/**
+ *
+ * Styles for the test
+ * 
+ */
 .floatRight {
     float:right;
 }
@@ -119,8 +119,9 @@ textarea {
     border-radius: 0;
 }
 
-
 body {
+    background: #eee;
+    
     @media (max-width: 400px) {
         padding-left: 0;
         padding-right: 0;
