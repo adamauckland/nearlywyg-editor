@@ -1,0 +1,81 @@
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-responsive.min.css" />
+		<link rel="stylesheet" type="text/css" href="style.css" />
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+	
+	<body>
+			
+		<div class="container editArea">
+			<h1>Demo NearlyWyg Editor</h1>
+			
+			
+			<div class="nearlyWyg">
+				
+				<form>
+					<div id="copyArea">
+					
+					</div>
+					
+					
+					<fieldset>
+						<!-- <span>&#9660;</span> -->
+						<ul id="styleSelector">
+							
+							
+							<li data-element="h1" data-selected="false">
+								<h1>Heading</h1>
+							</li>
+							
+							<li data-element="h2" data-selected="false">
+								<h2>Sub heading</h2>
+							</li>
+							
+							<li data-element="strong" data-selected="false">
+								<strong>Bold</strong>
+							</li>
+							
+							<li data-element="em" data-selected="false">
+								<em>Italic</em>
+							</li>
+							
+							<li data-element="p" data-default="true" data-selected="true"> 
+								Paragraph
+							</li>
+						</ul>
+					</fieldset>
+					
+					<fieldset>
+						<textarea id="newBlock" rows="4" class="input-block-level" placeholder="Add text block"></textarea>
+					</fieldset>
+					
+					<fieldset id="buttonBlock">
+						<span class="floatRight">
+							<button type="button" id="cancelButton" class="btn">Cancel</button>
+							<button type="button" id="okButton" class="btn btn-primary">Ok</button>
+						</span>
+					</fieldset>
+				</form>
+			</div>
+		</div>
+		
+				
+		<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+		<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+		
+		
+		<script type="text/javascript" src="js/jquery-ui-1.10.3.custom.min.js"></script>
+		<script type="text/javascript" src="js/test.js"></script>
+		<script src="js/jquery.ui.touch-punch.min.js"></script>
+		
+		
+		<script type="text/javascript">
+			$(document).ready(function() {
+				var nearlyWygEditor = new NearlyWygEditor('#styleSelector', '#newBlock', '#copyArea', '#buttonBlock');
+			});
+		</script>
+	</body>
+</html>

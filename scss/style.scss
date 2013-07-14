@@ -1,0 +1,128 @@
+body {
+    background: #eee;    
+}
+
+    .nearlyWyg {
+    #styleSelector {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        
+        li {
+            cursor: pointer;
+            padding: 12px 8px 12px 8px;
+            background: #444; 
+            color: #fff;
+            font-size: 18px;
+            font-weight: normal;
+            
+            
+            &[data-selected=true] {
+                color:#fff;
+                background: #3fb27c;    
+            }
+        }
+        
+    }
+    
+    #styleSelector {
+        p, h1, h2, em, strong, a {
+            padding: 0;
+            margin: 0;
+        }
+        
+        h1 {
+            font-size:24px;
+            line-height: 24px;
+        }
+        
+         h2 {
+            font-size: 16px;
+            line-height: 16px;
+        }
+        
+        span {
+            float:right;
+        }
+    }
+    
+    #copyArea {
+        border: solid 1px #BBB;
+        background: #fff;
+        cursor: pointer;
+        
+        @media (max-width: 400px) {
+            border-left: none;
+            border-right: none;
+        }
+        border-bottom: none;
+        
+        em,strong,p {
+            padding-left: 12px;
+            padding-top: 0px;
+            padding: 12px;
+            margin:0;
+        }
+        
+        h1 {
+            margin:0;
+            padding-left:12px;
+            font-size:24px;
+        }
+        
+        h2 {
+            margin:0;
+            padding-left:12px;
+            font-size: 16px;
+        }
+        
+        em {
+            margin:0;
+            padding: 12px;
+            display: block;
+        }
+        
+        strong {
+            margin:0;
+            padding: 12px;
+            display: block;
+        }
+        
+        .editing {
+            background: #e2f4ff;
+        }
+        
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: moz-none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+    
+    #newBlock {
+        border-top: none;
+    }
+}
+
+
+    
+.floatRight {
+    float:right;
+}
+
+.editArea {
+    
+}
+
+textarea {
+    border-radius: 0;
+}
+
+
+body {
+    @media (max-width: 400px) {
+        padding-left: 0;
+        padding-right: 0;
+    }    
+}
