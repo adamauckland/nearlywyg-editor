@@ -95,7 +95,9 @@ function NearlyWygEditor(styleSelector, textArea, copyArea, buttonBlock) {
         elementBlock.styleBlock = styleBlock;
         styleBlock.elementBlock = elementBlock;
         
-        $buttonBlock.hide();
+        if (!$buttonBlock.hasClass('hidden')) {
+            $buttonBlock.addClass('hidden');
+        }
         
         attachButtonClickHandlers();        
     }
@@ -126,7 +128,10 @@ function NearlyWygEditor(styleSelector, textArea, copyArea, buttonBlock) {
         
         this.element.bind('focus', function() {
             self.styleBlock.element.show();
-            $buttonBlock.show();
+            
+            if ($buttonBlock.hasClass('hidden')) {
+                $buttonBlock.removeClass('hidden');
+            }
         });
         
         
@@ -134,7 +139,10 @@ function NearlyWygEditor(styleSelector, textArea, copyArea, buttonBlock) {
             self.element.val('');
             self.styleBlock.resetStyleBlock();                    
             self.newElement = true;
-            $buttonBlock.hide();
+            
+            if (!$buttonBlock.hasClass('hidden')) {
+                $buttonBlock.addClass('hidden');
+            }
         }
         
         
@@ -164,7 +172,9 @@ function NearlyWygEditor(styleSelector, textArea, copyArea, buttonBlock) {
             self.element.val(elementText);        
             self.element.focus();
             
-            $buttonBlock.show();
+            if ($buttonBlock.hasClass('hidden')) {
+                $buttonBlock.removeClass('hidden');
+            }
         }
         
         

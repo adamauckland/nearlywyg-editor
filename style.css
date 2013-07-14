@@ -1,72 +1,83 @@
-body {
-  background: #eee; }
-
-.nearlyWyg #styleSelector {
-  list-style: none;
-  padding: 0;
-  margin: 0; }
-  .nearlyWyg #styleSelector li {
-    cursor: pointer;
-    padding: 12px 8px 12px 8px;
-    background: #444;
-    color: #fff;
-    font-size: 18px;
-    font-weight: normal; }
-    .nearlyWyg #styleSelector li[data-selected=true] {
-      color: #fff;
-      background: #3fb27c; }
-.nearlyWyg #styleSelector p, .nearlyWyg #styleSelector h1, .nearlyWyg #styleSelector h2, .nearlyWyg #styleSelector em, .nearlyWyg #styleSelector strong, .nearlyWyg #styleSelector a {
-  padding: 0;
-  margin: 0; }
-.nearlyWyg #styleSelector h1 {
-  font-size: 24px;
-  line-height: 24px; }
-.nearlyWyg #styleSelector h2 {
-  font-size: 16px;
-  line-height: 16px; }
-.nearlyWyg #styleSelector span {
-  float: right; }
-.nearlyWyg #copyArea {
-  border: solid 1px #BBB;
-  background: #fff;
-  cursor: pointer;
-  border-bottom: none;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: moz-none;
-  -ms-user-select: none;
-  user-select: none; }
-  @media (max-width: 400px) {
-    .nearlyWyg #copyArea {
-      border-left: none;
-      border-right: none; } }
-  .nearlyWyg #copyArea em, .nearlyWyg #copyArea strong, .nearlyWyg #copyArea p {
-    padding-left: 12px;
-    padding-top: 0px;
-    padding: 12px;
+.nearlyWyg {
+  /*
+   * Hide buttons for mobile since we update on blur anyway
+   */ }
+  .nearlyWyg #styleSelector {
+    list-style: none;
+    padding: 0;
     margin: 0; }
-  .nearlyWyg #copyArea h1 {
-    margin: 0;
-    padding-left: 12px;
-    font-size: 24px; }
-  .nearlyWyg #copyArea h2 {
-    margin: 0;
-    padding-left: 12px;
-    font-size: 16px; }
-  .nearlyWyg #copyArea em {
-    margin: 0;
-    padding: 12px;
-    display: block; }
-  .nearlyWyg #copyArea strong {
-    margin: 0;
-    padding: 12px;
-    display: block; }
-  .nearlyWyg #copyArea .editing {
-    background: #e2f4ff; }
-.nearlyWyg #newBlock {
-  border-top: none; }
+    .nearlyWyg #styleSelector li {
+      cursor: pointer;
+      padding: 12px 8px 12px 8px;
+      background: #444;
+      color: #fff;
+      font-size: 18px;
+      font-weight: normal; }
+      .nearlyWyg #styleSelector li[data-selected=true] {
+        color: #fff;
+        background: #3fb27c; }
+  .nearlyWyg #styleSelector p, .nearlyWyg #styleSelector h1, .nearlyWyg #styleSelector h2, .nearlyWyg #styleSelector em, .nearlyWyg #styleSelector strong, .nearlyWyg #styleSelector a {
+    padding: 0;
+    margin: 0; }
+  .nearlyWyg #styleSelector h1 {
+    font-size: 24px;
+    line-height: 24px; }
+  .nearlyWyg #styleSelector h2 {
+    font-size: 16px;
+    line-height: 16px; }
+  .nearlyWyg #styleSelector span {
+    float: right; }
+  .nearlyWyg #copyArea {
+    border: solid 1px #BBB;
+    background: #fff;
+    cursor: pointer;
+    border-bottom: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: moz-none;
+    -ms-user-select: none;
+    user-select: none; }
+    @media (max-width: 400px) {
+      .nearlyWyg #copyArea {
+        border-left: none;
+        border-right: none; } }
+    .nearlyWyg #copyArea em, .nearlyWyg #copyArea strong, .nearlyWyg #copyArea p {
+      padding-left: 12px;
+      padding-top: 0px;
+      padding: 12px;
+      margin: 0; }
+    .nearlyWyg #copyArea h1 {
+      margin: 0;
+      padding-left: 12px;
+      font-size: 24px; }
+    .nearlyWyg #copyArea h2 {
+      margin: 0;
+      padding-left: 12px;
+      font-size: 16px; }
+    .nearlyWyg #copyArea em {
+      margin: 0;
+      padding: 12px;
+      display: block; }
+    .nearlyWyg #copyArea strong {
+      margin: 0;
+      padding: 12px;
+      display: block; }
+    .nearlyWyg #copyArea .editing {
+      background: #FFFBE2; }
+  .nearlyWyg #newBlock {
+    border-top: none; }
+  .nearlyWyg #buttonBlock.hidden {
+    display: none; }
+  @media (max-width: 400px) {
+    .nearlyWyg #buttonBlock {
+      display: none; } }
 
+/**
+ *
+ * Styles for the test
+ * 
+ */
 .floatRight {
   float: right; }
 
@@ -74,6 +85,7 @@ textarea {
   border-radius: 0; }
 
 body {
+  background: #eee;
   overflow-y: scroll; }
   @media (max-width: 400px) {
     body {

@@ -85,7 +85,7 @@
         }
         
         .editing {
-            background: #e2f4ff;
+            background: #FFFBE2;
         }
         
         -webkit-touch-callout: none;
@@ -98,6 +98,18 @@
     
     #newBlock {
         border-top: none;
+    }
+    
+    /*
+     * Hide buttons for mobile since we update on blur anyway
+     */
+    #buttonBlock {
+        &.hidden {
+            display: none;
+        }
+        @media (max-width: 400px) {
+            display: none;
+        }
     }
 }
 
