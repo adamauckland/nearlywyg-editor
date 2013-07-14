@@ -13,6 +13,8 @@
       color: #fff;
       font-size: 18px;
       font-weight: normal; }
+      .nearlyWyg #styleSelector li[data-selected=false] {
+        display: none; }
       .nearlyWyg #styleSelector li[data-selected=true] {
         color: #fff;
         background: #3fb27c; }
@@ -64,7 +66,7 @@
       padding: 12px;
       display: block; }
     .nearlyWyg #copyArea .editing {
-      background: #FFFBE2; }
+      background: #FFF2AD; }
   .nearlyWyg #newBlock {
     border-top: none; }
   .nearlyWyg #buttonBlock.hidden {

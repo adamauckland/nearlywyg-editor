@@ -12,6 +12,9 @@
             font-size: 18px;
             font-weight: normal;
             
+            &[data-selected=false] {
+                display: none;    
+            }
             
             &[data-selected=true] {
                 color:#fff;
@@ -85,7 +88,7 @@
         }
         
         .editing {
-            background: #FFFBE2;
+            background: #FFF2AD;
         }
         
         -webkit-touch-callout: none;
