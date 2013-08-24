@@ -11,9 +11,11 @@ function NearlyWygEditor(styleSelector, textArea, copyArea, buttonBlock) {
     
     
     this.onChangeFunctions = [];
+    
     this.onChange = function(fn) {
         this.onChangeFunctions.push(fn);
     };
+    
     this.fireOnChange = function() {
         for(var i=0; i< this.onChangeFunctions.length; i++) {
             this.onChangeFunctions[i]();
